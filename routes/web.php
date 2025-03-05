@@ -25,10 +25,11 @@ Route::get('register',[registerController::class,'register'])->name('register');
 Route::post('postRegister',[registerController::class,'Postregister'])->name('postregister'); 
 Route::get('login',[loginController::class,'login'])->name('login'); 
 Route::Post('loginpost',[loginController::class,'loginPost'])->name('postlogin'); 
+
 Route::middleware('auth')->group(function () {
-    Route::get('/', function () {
-        return view('welcome');})->name('home');
-        
-    Route::get('AddTask',[TaskController::class, 'addTask'])->name('task');
+    Route::get('/', [TaskController::class, 'listTask'])->name('home');
+    Route::get('AddTask',[TaskController::class, 'addTask'])->name('taskAdd');
+    Route::post('AddTaskPost',[TaskController::class, 'addTaskPost'])->name('taskPost');
+
 });
 

@@ -20,7 +20,7 @@
           </ul>
           
             
-            <a href="{{ route('task') }}" class="btn btn-outline-success" type="submit">Add Task</a>
+            <a href="{{ route('taskAdd') }}" class="btn btn-outline-success" type="submit">Add Task</a>
         
         </div>
       </div>
