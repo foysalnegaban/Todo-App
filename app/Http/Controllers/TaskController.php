@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {   function listTask(){
-    $list = Task::all();
+    $list = Task::where('status', null)->paginate(3);
     return view('welcome',compact('list'));
 }
 
@@ -32,4 +32,20 @@ class TaskController extends Controller
 
 
     }
+
+    function UpdateStatus($id){
+        if(Task::where('id', $id)->update(['status'=>'completed'])){
+            return redirect(route('home'))->with('success','Task Update successfully');
+        }
+        return redirect(route('home'))->with('error','error occurred while updating,try again');
+    }
+
+    function TaskDelete($id){
+        if(Task::where('id', $id)->delete()){
+            return redirect(route('home'))->with('success','Task Deleted successfully');
+        }
+        return redirect(route('home'))->with('error','error occurred while deleting,try again');
+
+    }
+    
 }
