@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('deadline');
+            $table->string('user_id');
             $table->string('status')->nullable();
             $table->timestamps();
         });

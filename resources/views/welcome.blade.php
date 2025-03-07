@@ -18,6 +18,8 @@
         @endif
       
         <div class="my-3 p-3 bg-body rounded shadow-sm">
+          <div class="mb-3 mt-3 fw-bold">Welcome {{ Auth()->user()->name }}</div>
+          
           <h6 class="border-bottom pb-2 mb-0">List of task</h6>
 
           @foreach ($list as $task)

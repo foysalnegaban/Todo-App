@@ -24,8 +24,10 @@ Route::get('/', function () {
 //Route::Post('loginpost',[AuthManager::class,'loginPost'])->name('postlogin'); 
 Route::get('register',[registerController::class,'register'])->name('register'); 
 Route::post('postRegister',[registerController::class,'Postregister'])->name('postregister'); 
+
 Route::get('login',[loginController::class,'login'])->name('login'); 
 Route::Post('loginpost',[loginController::class,'loginPost'])->name('postlogin'); 
+
 Route::get('logout',[logoutController::class,'logout'])->name('logout'); 
 
 
